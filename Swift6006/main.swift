@@ -8,6 +8,3 @@
 
 import Foundation
 
-
-let array =  [22, 10, 51, 50, 51, 56, 9, 29, 60, 66]
-findAPeak(array)
