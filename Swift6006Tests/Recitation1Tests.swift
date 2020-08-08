@@ -35,7 +35,7 @@ class PeakFinding1D: XCTestCase {
         for _ in 0 ..< 10 { // for 10 different sizes
             let size = Int.random(in: 1 ..< 100)
             for _ in 0 ..< 100 {
-                let array = (0 ..< size).map { i in Int.random(in: 0..<100) }
+                let array = (0 ..< size).map { i in Int.random(in: -100..<100) }
                 let peakIndex = findAPeak(array)
                 XCTAssertTrue(isPeak(array, index: peakIndex), "\(array) \(peakIndex)")
                 
