@@ -21,7 +21,7 @@ class PeakFinding1D: XCTestCase {
         XCTAssertTrue(isPeak(array, index: findAPeak(array)))
     }
     
-    func testMonotonicallyIncresingArray() throws {
+    func testMonotonicallyIncreasingArray() throws {
         let array:[Int] = Array(0..<100)
         XCTAssertEqual(array.endIndex - 1, findAPeak(array))
     }
@@ -42,7 +42,5 @@ class PeakFinding1D: XCTestCase {
             }
         }
     }
-
-
 
 }
