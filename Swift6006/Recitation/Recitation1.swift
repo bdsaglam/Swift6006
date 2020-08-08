@@ -23,8 +23,8 @@ func isPeak(_ array:[Int], index: Int) -> Bool {
 }
 
 /// Finds a peak in an array. A peak is an element that is not less than its left and right neighbors. The peak found does not have to be global maximum.
-///  Time complexity:         O(lg(n))
-///  Memory complexity:    O(1)
+///  Time complexity  : O(lg(n))
+///  Space complexity: O(1)
 /// - Parameter array: A non-empty array of integers.
 /// - Returns: index of a peak element
 func findAPeak(_ array:[Int]) -> Int {
