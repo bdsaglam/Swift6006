@@ -35,12 +35,53 @@ class PeakFinding1D: XCTestCase {
         for _ in 0 ..< 10 { // for 10 different sizes
             let size = Int.random(in: 1 ..< 100)
             for _ in 0 ..< 100 {
-                let array = (0 ..< size).map { i in Int.random(in: -100..<100) }
+                let array = (0 ..< size).map{ i in Int.random(in: -100..<100) }
                 let peakIndex = findAPeak(array)
-                XCTAssertTrue(isPeak(array, index: peakIndex), "\(array) \(peakIndex)")
+                XCTAssertTrue(isPeak(array, index: peakIndex),
+                              "\(array) \(peakIndex)")
                 
             }
         }
     }
 
+}
+
+protocol BasePeakFinding2DTestCase {
+    var peakFinder: (Array2D<Int>) -> (Int, Int) { get }
+}
+
+extension BasePeakFinding2DTestCase {
+    func testSpecific() throws {
+        let data: [[Int]] = [
+            [2, 1, 0],
+            [-9, 3, -1]
+        ]
+        let arr = Array2D(data)
+        
+        let (r, c) = peakFinder(arr)
+        XCTAssertTrue(isPeak2D(arr, row: r, col: c))
+    }
+    
+    func testRandom2DArrays() throws {
+        for _ in 0..<10 { // 10 different shape
+            let nrow = Int.random(in: 1..<10)
+            let ncol = Int.random(in: 1..<10)
+            let size = nrow * ncol
+            for _ in 0..<100 {
+                let data = (0 ..< size).map { i in Int.random(in: -100..<100) }
+                let arr = Array2D(data: data, shape: (nrow, ncol))
+                
+                let (r,c) = peakFinder(arr)
+                XCTAssertTrue(isPeak2D(arr, row: r, col: c))
+            }
+        }
+    }
+}
+    
+class PeakFinding2DSlow: XCTestCase, BasePeakFinding2DTestCase {
+    let peakFinder: (Array2D<Int>) -> (Int, Int) = findA2DPeakSlow
+}
+
+class PeakFinding2D: XCTestCase, BasePeakFinding2DTestCase {
+    let peakFinder: (Array2D<Int>) -> (Int, Int) = findA2DPeak
 }
