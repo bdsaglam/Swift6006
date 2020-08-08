@@ -87,7 +87,6 @@ func findA2DPeakSlow<T: Comparable>(_ array: Array2D<T>) -> (row:Int, col:Int) {
 ///   - startCol: start column index of range (inclusive)
 ///   - endCol: end column index of range (exclusive)
 /// - Returns: row and column indices of a peak element
-
 func findA2DPeakSlow<T: Comparable>(_ array: Array2D<T>, startCol:Int, endCol:Int)
     -> (row:Int, col:Int) {
     precondition(array.count > 0)
@@ -203,8 +202,6 @@ private func findA2DPeak<T: Comparable>(
         }
         return (row: maxRow, col:midCol)
     }
-    
-    
 }
 
 
