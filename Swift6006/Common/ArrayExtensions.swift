@@ -31,3 +31,38 @@ extension Array {
         }
     }
 }
+
+extension Array {
+    func group<Key: Hashable>(by transform: (Element) -> Key) -> [Key: [Element]]{
+        return self.reduce(into: [:]) { dict, current -> () in
+            let key = transform(current)
+            var bucket: [Element] = dict[key] ?? []
+            bucket.append(current)
+            dict[key] = bucket
+        }
+    }
+}
+
+extension Array where Element: Hashable {
+    func group() -> [Element: [Element]] {
+        return self.group(by: { $0 })
+    }
+}
+
+extension Array where Element==Int {
+    func average() -> Double {
+        return Double(self.reduce(0, +)) / Double(count)
+    }
+}
+
+extension Array where Element==Double {
+    func average() -> Double {
+        return self.reduce(Double(0), +) / Double(count)
+    }
+}
+
+extension Array where Element==Float {
+    func average() -> Float {
+        return self.reduce(Float(0), +) / Float(count)
+    }
+}
