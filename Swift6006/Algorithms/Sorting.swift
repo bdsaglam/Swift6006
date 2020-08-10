@@ -43,7 +43,7 @@ func selectionSort<Element: Comparable>(_ array:inout [Element]) {
 /// - Returns: A sorted copy of input array
 func mergeSortRecursive<Element: Comparable >(_ array:[Element]) -> [Element] {
     if array.count == 0 { return array }
-    return mergeSortHelper(array, start: 0, end: array.count - 1)
+    return mergeSortRecursiveHelper(array, start: 0, end: array.count - 1)
 }
 
 /// Recursive merge sort helper function that applies it on specified range.
@@ -52,7 +52,7 @@ func mergeSortRecursive<Element: Comparable >(_ array:[Element]) -> [Element] {
 ///   - start: Start index of range (inclusive)
 ///   - end: End index of range (inclusive)
 /// - Returns: A sorted copy of the range of input array
-private func mergeSortHelper<Element: Comparable>(
+private func mergeSortRecursiveHelper<Element: Comparable>(
     _ array:[Element],
     start:Int,
     end:Int
@@ -60,8 +60,8 @@ private func mergeSortHelper<Element: Comparable>(
     if start == end { return [array[start]] }
     
     let mid = (start + end) / 2 + 1
-    let left = mergeSortHelper(array, start: start, end: mid - 1)
-    let right = mergeSortHelper(array, start: mid, end: end)
+    let left = mergeSortRecursiveHelper(array, start: start, end: mid - 1)
+    let right = mergeSortRecursiveHelper(array, start: mid, end: end)
     return merge(left, right)
 }
 
@@ -100,15 +100,48 @@ private func merge<Element: Comparable>(_ left:[Element], _ right:[Element])
     return array
 }
 
+/// In-place merge sort
+/// It sorts the array in bottom-up fashion. Starts from two element subarrays and doubles size at each step
+/// - Parameter array: A reference to an array of comparable elements
+func mergeSort<Element: Comparable>(_ array:inout [Element]) {
+    if array.count < 2 { return }
+    
+    // Construct slices at each level of tree, like
+    // [0,n)
+    // [0, n/2), [n/2, n)
+    // [0, n/4), [n/4, n/2), [n/2, 3n/4), [3n/4, n)
+    // ...
+    var slices = [(0, array.count)]
+    var windowStart = 0
+    var windowEnd = windowStart + 1
 
-// Non-recursive in-place merge sort
+    var sliceSize = array.count / 2
+    while sliceSize > 0 {
+        var counter = 0
+        for (startIndex, endIndex) in slices[windowStart..<windowEnd] {
+            let midIndex = (startIndex + endIndex) / 2
+            
+            slices.append((startIndex, midIndex))
+            slices.append((midIndex, endIndex))
+            counter += 2
+        }
+        windowStart = windowEnd
+        windowEnd += counter
+        sliceSize /= 2
+    }
+    
+    for (startIndex, endIndex) in slices.reversed() {
+        mergeSortHelper(&array, startIndex: startIndex, endIndex: endIndex)
+    }
 
-/// In-place merge sort with range
+}
+
+/// Sorts and merges two halves of a given range in an array
 /// - Parameters:
 ///   - array: A reference to an array of comparable elements
 ///   - startIndex: Start index of range (inclusive)
-///   - endIndex: End index of range (inclusive)
-func merge<Element:Comparable>(
+///   - endIndex: End index of range (exclusive)
+func mergeSortHelper<Element:Comparable>(
     _ array:inout [Element],
     startIndex:Int,
     endIndex:Int
@@ -155,33 +188,7 @@ func merge<Element:Comparable>(
     
 }
 
-func mergeSort<Element: Comparable>(_ array:inout [Element]) {
-    if array.count < 2 { return }
-    
-    var indexPairs = [(0, array.count)]
-    var windowStart = 0
-    var windowEnd = windowStart + 1
 
-    var sliceSize = array.count / 2
-    while sliceSize > 0 {
-        var counter = 0
-        for (startIndex, endIndex) in indexPairs[windowStart..<windowEnd] {
-            let midIndex = (startIndex + endIndex)/2
-            
-            indexPairs.append((startIndex, midIndex))
-            indexPairs.append((midIndex, endIndex))
-            counter += 2
-        }
-        windowStart = windowEnd
-        windowEnd += counter
-        sliceSize /= 2
-    }
-    
-    for (startIndex, endIndex) in indexPairs.reversed(){
-        merge(&array, startIndex: startIndex, endIndex: endIndex)
-    }
-
-}
 
 // MARK: Quick Sort
 /**
