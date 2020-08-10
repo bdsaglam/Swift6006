@@ -23,6 +23,8 @@
 		3FCD8FD524E0811C00C5E575 /* DocumentSimilarityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCD8FD424E0811C00C5E575 /* DocumentSimilarityTests.swift */; };
 		3FCD8FD624E084DF00C5E575 /* DocumentSimilarity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCD8FD224E07CD700C5E575 /* DocumentSimilarity.swift */; };
 		3FCD8FD824E08A8500C5E575 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCD8FD724E08A8500C5E575 /* Utils.swift */; };
+		3FCD8FDB24E1933500C5E575 /* Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCD8FDA24E1933500C5E575 /* Sorting.swift */; };
+		3FCD8FDD24E1948700C5E575 /* SequenceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCD8FDC24E1948700C5E575 /* SequenceExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,6 +54,8 @@
 		3FCD8FD224E07CD700C5E575 /* DocumentSimilarity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentSimilarity.swift; sourceTree = "<group>"; };
 		3FCD8FD424E0811C00C5E575 /* DocumentSimilarityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentSimilarityTests.swift; sourceTree = "<group>"; };
 		3FCD8FD724E08A8500C5E575 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		3FCD8FDA24E1933500C5E575 /* Sorting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sorting.swift; sourceTree = "<group>"; };
+		3FCD8FDC24E1948700C5E575 /* SequenceExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequenceExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,7 @@
 			children = (
 				3FAC844224DECA11004B39C8 /* PeakFinding.swift */,
 				3FCD8FD224E07CD700C5E575 /* DocumentSimilarity.swift */,
+				3FCD8FDA24E1933500C5E575 /* Sorting.swift */,
 			);
 			path = Algorithms;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				3FAC844724DF08B7004B39C8 /* ArrayExtensions.swift */,
+				3FCD8FDC24E1948700C5E575 /* SequenceExtensions.swift */,
 				3FAC844A24DF0DD2004B39C8 /* CollectionExtensions.swift */,
 				3FAC844D24DF1A43004B39C8 /* Array2D.swift */,
 				3FCD8FD724E08A8500C5E575 /* Utils.swift */,
@@ -230,11 +236,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FAC842E24DEC6ED004B39C8 /* main.swift in Sources */,
+				3FCD8FDD24E1948700C5E575 /* SequenceExtensions.swift in Sources */,
 				3FAC844B24DF0DD2004B39C8 /* CollectionExtensions.swift in Sources */,
 				3FCD8FD324E07CD700C5E575 /* DocumentSimilarity.swift in Sources */,
 				3FCD8FD824E08A8500C5E575 /* Utils.swift in Sources */,
 				3FAC844824DF08B7004B39C8 /* ArrayExtensions.swift in Sources */,
 				3FAC844324DECA11004B39C8 /* PeakFinding.swift in Sources */,
+				3FCD8FDB24E1933500C5E575 /* Sorting.swift in Sources */,
 				3FAC844E24DF1A43004B39C8 /* Array2D.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: Extremes
 extension Array where Element: Comparable {
     func argmax() -> Index? {
         return indices.max(by: { self[$0] < self[$1] })
@@ -32,6 +33,7 @@ extension Array {
     }
 }
 
+// MARK: Aggregation
 extension Array {
     func group<Key: Hashable>(by transform: (Element) -> Key) -> [Key: [Element]]{
         return self.reduce(into: [:]) { dict, current -> () in
@@ -66,3 +68,5 @@ extension Array where Element==Float {
         return self.reduce(Float(0), +) / Float(count)
     }
 }
+
+
