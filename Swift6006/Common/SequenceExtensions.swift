@@ -26,15 +26,14 @@ extension Sequence {
         guard var previous = it.next() else { return true }
         
         while let current = it.next() {
-            guard try areInIncreasingOrder(previous, current) else {
+            if try !areInIncreasingOrder(previous, current) &&
+                areInIncreasingOrder(current, previous) {
                 return false
             }
             previous = current
         }
         return true
-        
     }
-    
 }
 
 extension Sequence where Element: Comparable {
