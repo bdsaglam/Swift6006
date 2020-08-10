@@ -122,11 +122,11 @@
 		3FAC843924DEC6FC004B39C8 /* Swift6006Tests */ = {
 			isa = PBXGroup;
 			children = (
-				3FAC843A24DEC6FC004B39C8 /* Swift6006Tests.swift */,
-				3FAC844524DECA92004B39C8 /* PeakFindingTests.swift */,
-				3FCD8FD424E0811C00C5E575 /* DocumentSimilarityTests.swift */,
 				3FAC845024DF1D42004B39C8 /* Array2DTests.swift */,
+				3FCD8FD424E0811C00C5E575 /* DocumentSimilarityTests.swift */,
+				3FAC844524DECA92004B39C8 /* PeakFindingTests.swift */,
 				3FCD8FE224E1A11D00C5E575 /* SortingTests.swift */,
+				3FAC843A24DEC6FC004B39C8 /* Swift6006Tests.swift */,
 				3FAC843C24DEC6FC004B39C8 /* Info.plist */,
 			);
 			path = Swift6006Tests;

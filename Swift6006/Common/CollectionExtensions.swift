@@ -26,16 +26,16 @@ extension Collection where Element: Hashable {
     }
 }
 
-extension Collection where Element:Numeric {
+extension Collection where Element: Numeric {
     func sum() -> Element {
-        return reduce(0, +)
+        return reduce(Element(exactly: 0)!, +)
     }
 }
 
 extension Collection where Element==Int {
     func average() -> Double {
         guard count > 0 else { return Double.nan }
-        
+
         return Double(sum()) / Double(count)
     }
 }
@@ -43,7 +43,7 @@ extension Collection where Element==Int {
 extension Collection where Element==Double {
     func average() -> Double {
         guard count > 0 else { return Double.nan }
-        
+
         return sum() / Double(count)
     }
 }

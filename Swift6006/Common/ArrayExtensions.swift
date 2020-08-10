@@ -50,22 +50,34 @@ extension Array where Element: Hashable {
         return self.group(by: { $0 })
     }
 }
+//
+//extension Array where Element==Int {
+//    func average() -> Double {
+//        return Double(self.reduce(0, +)) / Double(count)
+//    }
+//}
+//
+//extension Array where Element==Double {
+//    func average() -> Double {
+//        return self.reduce(Double(0), +) / Double(count)
+//    }
+//}
+//
+//extension Array where Element==Float {
+//    func average() -> Float {
+//        return self.reduce(Float(0), +) / Float(count)
+//    }
+//}
 
-extension Array where Element==Int {
-    func average() -> Double {
-        return Double(self.reduce(0, +)) / Double(count)
-    }
-}
 
-extension Array where Element==Double {
-    func average() -> Double {
-        return self.reduce(Double(0), +) / Double(count)
-    }
-}
-
-extension Array where Element==Float {
-    func average() -> Float {
-        return self.reduce(Float(0), +) / Float(count)
+extension Array where Element: Numeric {
+    func cumsum() ->  [Element] {
+        guard count > 0 else { return [] }
+        var cs = self
+        for i in 1..<array.count {
+            cs[i] += cs[i-1]
+        }
+        return cs
     }
 }
 

@@ -8,18 +8,21 @@
 
 import Foundation
 
-let sizes = Array(stride(from: 0, to: 100, by: 10)) +
-    Array(stride(from: 100, to: 1000, by: 100))
-let numberRange = 0..<100
 func makeRandomArray(size: Int) -> [Int] {
-    return (0..<size).map { i in Int.random(in: numberRange) }
+    return (0..<size).map { i in Int.random(in: 0..<100) }
 }
 
-var array = [1,1,1]
-array.sort(by: <)
-assert(array.isSorted())
+//let array = [100, 121, 102, 113, 140, 100]
+//
+//print(radixSort(array, numDigits: 3, base: 10))
 
+let array = makeRandomArray(size: 10000).map { Int($0)}
+//let array = Array(repeating: 1, count: 100000)
+//print(array)
 
-//array.remove(at: 4)
-array.popLast()
+print(measureInMilliseconds {
+    let result = bucketSort(array, minValue: array.min()!, maxValue: array.max()!)
+//    assert(result.isSorted())
+})
+
 
