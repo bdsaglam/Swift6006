@@ -236,3 +236,22 @@ func quickSortProactive<Element: Comparable>(_ array: inout Array<Element>) {
     array.shuffle()
     quickSortHelper(&array, from: 0, to: array.count - 1)
 }
+
+
+// MARK: Heap sort
+
+func heapSort<Element: Comparable>(_ array:[Element]) -> [Element] {
+    let heap = ArrayHeap(from: array, by: <)
+    return Array(heap)
+}
+
+func heapSort<Element>(
+    _ array:[Element],
+    by areInIncreasingOrder: @escaping (Element, Element) -> Bool
+) -> [Element]
+{
+    let heap = ArrayHeap(from: array, by: areInIncreasingOrder)
+    return Array(heap)
+}
+
+

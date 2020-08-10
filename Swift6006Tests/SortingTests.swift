@@ -65,5 +65,13 @@ class SortingUnitTest: XCTestCase {
             XCTAssertTrue(array.isSorted())
         }
     }
+    
+    func testHeapSort(){
+        for n in sizes {
+            let array = makeRandomArray(size: n)
+            let actual = heapSort(array)
+            XCTAssertTrue(actual.isSorted())
+        }
+    }
 
 }

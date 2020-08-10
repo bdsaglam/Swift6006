@@ -8,24 +8,18 @@
 
 import Foundation
 
+let sizes = Array(stride(from: 0, to: 100, by: 10)) +
+    Array(stride(from: 100, to: 1000, by: 100))
+let numberRange = 0..<100
+func makeRandomArray(size: Int) -> [Int] {
+    return (0..<size).map { i in Int.random(in: numberRange) }
+}
 
-let data: [[Double]] = [
-    [2.0, 1.0, 0.0],
-    [-9.0, 3.0, -1.0]
-]
-let arr = Array2D(data)
-
-
-print(arr[0])
-print(arr[1])
-
-print(arr[nil, 0])
-print(arr[nil, 1])
-print(arr[nil, 2])
-
-print(arr[nil, 1].argmax()!)
-
-print(arr.ncol)
+var array = [1,1,1]
+array.sort(by: <)
+assert(array.isSorted())
 
 
-findA2DPeakSlow(arr)
+//array.remove(at: 4)
+array.popLast()
+

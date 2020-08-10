@@ -33,6 +33,8 @@
 		3FCD8FE624E1A23700C5E575 /* SequenceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCD8FDC24E1948700C5E575 /* SequenceExtensions.swift */; };
 		3FCD8FE724E1A23900C5E575 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCD8FD724E08A8500C5E575 /* Utils.swift */; };
 		3FCD8FE824E1A23C00C5E575 /* LinearSorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCD8FE024E19B2300C5E575 /* LinearSorting.swift */; };
+		3FCD8FEA24E1B4C200C5E575 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCD8FE924E1B4C200C5E575 /* Heap.swift */; };
+		3FCD8FEB24E1C4C900C5E575 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCD8FE924E1B4C200C5E575 /* Heap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -67,6 +69,7 @@
 		3FCD8FDE24E19AC500C5E575 /* IntExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtensions.swift; sourceTree = "<group>"; };
 		3FCD8FE024E19B2300C5E575 /* LinearSorting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearSorting.swift; sourceTree = "<group>"; };
 		3FCD8FE224E1A11D00C5E575 /* SortingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingTests.swift; sourceTree = "<group>"; };
+		3FCD8FE924E1B4C200C5E575 /* Heap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +159,7 @@
 		3FCD8FD924E1810900C5E575 /* Data Structures */ = {
 			isa = PBXGroup;
 			children = (
+				3FCD8FE924E1B4C200C5E575 /* Heap.swift */,
 			);
 			path = "Data Structures";
 			sourceTree = "<group>";
@@ -252,6 +256,7 @@
 				3FAC842E24DEC6ED004B39C8 /* main.swift in Sources */,
 				3FCD8FDD24E1948700C5E575 /* SequenceExtensions.swift in Sources */,
 				3FAC844B24DF0DD2004B39C8 /* CollectionExtensions.swift in Sources */,
+				3FCD8FEA24E1B4C200C5E575 /* Heap.swift in Sources */,
 				3FCD8FD324E07CD700C5E575 /* DocumentSimilarity.swift in Sources */,
 				3FCD8FD824E08A8500C5E575 /* Utils.swift in Sources */,
 				3FCD8FE124E19B2300C5E575 /* LinearSorting.swift in Sources */,
@@ -270,6 +275,7 @@
 				3FCD8FD524E0811C00C5E575 /* DocumentSimilarityTests.swift in Sources */,
 				3FAC844C24DF0DD2004B39C8 /* CollectionExtensions.swift in Sources */,
 				3FAC844F24DF1A43004B39C8 /* Array2D.swift in Sources */,
+				3FCD8FEB24E1C4C900C5E575 /* Heap.swift in Sources */,
 				3FCD8FE724E1A23900C5E575 /* Utils.swift in Sources */,
 				3FAC843B24DEC6FC004B39C8 /* Swift6006Tests.swift in Sources */,
 				3FCD8FE824E1A23C00C5E575 /* LinearSorting.swift in Sources */,
