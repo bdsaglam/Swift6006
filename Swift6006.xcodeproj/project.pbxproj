@@ -149,7 +149,6 @@
 		3FAC844124DEC79E004B39C8 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				3FAC844D24DF1A43004B39C8 /* Array2D.swift */,
 				3FAC844724DF08B7004B39C8 /* ArrayExtensions.swift */,
 				3FAC844A24DF0DD2004B39C8 /* CollectionExtensions.swift */,
 				3FCD8FDE24E19AC500C5E575 /* IntExtensions.swift */,
@@ -162,6 +161,7 @@
 		3FCD8FD924E1810900C5E575 /* Data Structures */ = {
 			isa = PBXGroup;
 			children = (
+				3FAC844D24DF1A43004B39C8 /* Array2D.swift */,
 				3FCD8FE924E1B4C200C5E575 /* Heap.swift */,
 			);
 			path = "Data Structures";
