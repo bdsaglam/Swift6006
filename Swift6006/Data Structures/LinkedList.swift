@@ -300,12 +300,20 @@ extension LinkedList {
     var isEmpty: Bool { count == 0 }
 }
 
-extension LinkedList where Element: Equatable {
-    func firstIndex(of target: Element) -> Int? {
+extension LinkedList{
+    func firstIndex(where predicate: (Element) throws -> Bool) rethrows
+        -> Int?
+    {
         for (i, elem) in self.enumerated() {
-            if elem == target { return i }
+            if try predicate(elem) { return i }
         }
         return nil
+    }
+}
+
+extension LinkedList where Element: Equatable {
+    func firstIndex(of target: Element) -> Int? {
+        return firstIndex { $0 == target }
     }
 }
 

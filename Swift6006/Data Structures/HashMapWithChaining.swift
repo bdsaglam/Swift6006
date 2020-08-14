@@ -38,9 +38,7 @@ where Key: Hashable & Equatable
         guard let bucket = table[bucketIndex] else { return nil }
         
         for element in bucket {
-            if element.key == key {
-                return element.value
-            }
+            if element.key == key { return element.value }
         }
         
         return nil
@@ -61,16 +59,7 @@ where Key: Hashable & Equatable
             return
         }
         
-        
-        var j: Int? = nil
-        loop: for (i, item) in bucket.enumerated() {
-            if item.key == key {
-                j = i
-                break loop
-            }
-        }
-        
-        if let indexOfMatch = j {
+        if let indexOfMatch = (bucket.firstIndex { $0.key == key }) {
             bucket.remove(at: indexOfMatch)
             count -= 1
         }
@@ -83,16 +72,10 @@ where Key: Hashable & Equatable
     public mutating func remove(key: Key) -> Value? {
         let bucketIndex = hash(key)
         guard let bucket = table[bucketIndex] else { return nil }
-        
-        var j: Int? = nil
-        loop: for (i, item) in bucket.enumerated() {
-            if item.key == key {
-                j = i
-                break loop
-            }
+
+        guard let indexOfMatch = (bucket.firstIndex { $0.key == key }) else {
+            return nil
         }
-        
-        guard let indexOfMatch = j else { return nil }
         
         let element = bucket.remove(at: indexOfMatch)
         count -= 1
@@ -115,7 +98,8 @@ where Key: Hashable & Equatable
     private mutating func resizeTable(newSize: Int) {
         tableSize = newSize
         
-        var newTable: [LinkedList<Item>?] = Array(repeating: nil, count: tableSize)
+        var newTable: [LinkedList<Item>?] = Array(
+            repeating: nil, count: tableSize)
         
         for bucket in table.compactMap({ $0 }) {
             for element in bucket {
@@ -129,9 +113,7 @@ where Key: Hashable & Equatable
                     newTable[newBucketIndex] = newBucket
                 }
             }
-            
         }
-        
         table = newTable
     }
     
