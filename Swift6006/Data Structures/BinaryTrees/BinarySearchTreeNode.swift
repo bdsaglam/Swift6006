@@ -11,7 +11,9 @@ import Foundation
 
 // MARK: Binary Search Tree Node Implementation
 
-final class BinarySearchTreeNode<Key: Comparable, Value> {
+final class BinarySearchTreeNode<Key: Comparable, Value>
+: BinarySearchTreeNodeType
+{
     let key: Key
     let value: Value
     
@@ -28,5 +30,3 @@ final class BinarySearchTreeNode<Key: Comparable, Value> {
         self.value = value
     }
 }
-
-extension BinarySearchTreeNode: BinarySearchTreeNodeType {}

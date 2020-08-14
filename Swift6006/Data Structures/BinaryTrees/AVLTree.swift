@@ -66,7 +66,6 @@ extension AVLNode : BinarySearchTreeNodeType {
         right?.updateSubtree()
         updateHeightAndSkew()
     }
-    
 }
 
 class AVLTree<Key:Comparable, Value>: BaseBinarySearchTree<AVLNode<Key, Value>> {

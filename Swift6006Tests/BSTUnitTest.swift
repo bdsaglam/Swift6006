@@ -7,18 +7,10 @@
 //
 
 import XCTest
-@testable import Algorithms
+@testable import Swift6006
 
 
 class BSTUnitTest: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
 
     func testExample() {
         let bst = BinarySearchTree<Int, String>()
@@ -44,7 +36,7 @@ class BSTUnitTest: XCTestCase {
         XCTAssert(bst.checkRepInvariance())
 
         print("breadth first traversal")
-        for (key, value) in bst.traverseLevels().flatMap({ $0 }) {
+        for (key, value) in bst.traverseByLevels().flatMap({ $0 }) {
             print(key, value)
         }
         XCTAssert(bst.checkRepInvariance())

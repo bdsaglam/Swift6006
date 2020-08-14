@@ -7,18 +7,10 @@
 //
 
 import XCTest
-@testable import Algorithms
+@testable import Swift6006
 
 
 class AVLTreeUnitTest: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
 
     func testExample() {
         let tree = AVLTree<Int, String>()
@@ -44,7 +36,7 @@ class AVLTreeUnitTest: XCTestCase {
         XCTAssert(tree.checkRepInvariance())
 
         print("breadth first traversal")
-        for (key, value) in tree.traverseLevels().flatMap({ $0 }) {
+        for (key, value) in tree.traverseByLevels().flatMap({ $0 }) {
             print(key, value)
         }
         XCTAssert(tree.checkRepInvariance())

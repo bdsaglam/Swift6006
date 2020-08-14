@@ -39,7 +39,7 @@ protocol BinarySearchTreeNodeType: BinaryTreeNodeType {
 }
 
 extension BinarySearchTreeNodeType {
-func checkSearchProperty() -> Bool {
+    func checkSearchProperty() -> Bool {
         if let left = left, left.key > key { return false }
         if let right = right, right.key < key { return false }
         
@@ -47,7 +47,7 @@ func checkSearchProperty() -> Bool {
     }
     
     func checkRepInvariance() -> Bool {
-        if !checkSearchProperty() { return false }
+        guard checkSearchProperty() else { return false }
 
         return (left?.checkRepInvariance() ?? true) &&
             (right?.checkRepInvariance() ?? true)
