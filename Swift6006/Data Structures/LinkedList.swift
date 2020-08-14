@@ -37,6 +37,25 @@ final class LinkedList<Element> {
         tail?.element
     }
     
+    func peek(at index: Int) -> Element {
+        return peekNode(at: index).element
+    }
+    
+    private func peekNode(at index: Int) -> Node<Element> {
+        guard index >= 0 && index < count else {
+            fatalError("Index out of range")
+        }
+        
+        var i = 0
+        var current: Node = head!
+        while i != index {
+            current = current.next!
+            i += 1
+        }
+        
+        return current
+    }
+    
     func prepend(_ newElement: Element) {
         let node = Node(newElement)
         
@@ -65,69 +84,8 @@ final class LinkedList<Element> {
         count += 1
     }
     
-    func popFirst() -> Element? {
-        guard let oldHead = head else {
-            return nil
-        }
-        
-        if let newHead = oldHead.next {
-            oldHead.next = nil
-            newHead.previous = nil
-            head = newHead
-        } else {
-            oldHead.next = nil
-            head = nil
-            tail = nil
-        }
-        
-        assert(oldHead.previous == nil)
-        assert(head?.previous == nil)
-        
-        count -= 1
-        return oldHead.element
-    }
     
-    func popLast() -> Element? {
-        guard let oldTail = tail else {
-            return nil
-        }
-        
-        if let newTail = oldTail.previous {
-            oldTail.previous = nil
-            newTail.next = nil
-            tail = newTail
-        } else {
-            oldTail.previous = nil
-            head = nil
-            tail = nil
-        }
-        
-        assert(oldTail.next == nil)
-        assert(tail?.next == nil)
-        
-        count -= 1
-        return oldTail.element
-    }
-    
-    func peek(at index: Int) -> Element {
-        return peekNode(at: index).element
-    }
-    
-    private func peekNode(at index: Int) -> Node<Element> {
-        guard index >= 0 && index < count else {
-            fatalError("Index out of range")
-        }
-        
-        var i = 0
-        var current: Node = head!
-        while i != index {
-            current = current.next!
-            i += 1
-        }
-        
-        return current
-    }
-    
+       
     func insert(_ newElement: Element, at index: Int) {
         guard index >= 0 && index <= count else {
             fatalError("Index out of range")
@@ -155,16 +113,62 @@ final class LinkedList<Element> {
     }
     
     @discardableResult
+    func removeFirst() -> Element? {
+        guard let oldHead = head else {
+            return nil
+        }
+        
+        if let newHead = oldHead.next {
+            oldHead.next = nil
+            newHead.previous = nil
+            head = newHead
+        } else {
+            oldHead.next = nil
+            head = nil
+            tail = nil
+        }
+        
+        assert(oldHead.previous == nil)
+        assert(head?.previous == nil)
+        
+        count -= 1
+        return oldHead.element
+    }
+    
+    @discardableResult
+    func removeLast() -> Element? {
+        guard let oldTail = tail else {
+            return nil
+        }
+        
+        if let newTail = oldTail.previous {
+            oldTail.previous = nil
+            newTail.next = nil
+            tail = newTail
+        } else {
+            oldTail.previous = nil
+            head = nil
+            tail = nil
+        }
+        
+        assert(oldTail.next == nil)
+        assert(tail?.next == nil)
+        
+        count -= 1
+        return oldTail.element
+    }
+    
+    @discardableResult
     func remove(at index: Int) -> Element {
         guard index >= 0 && index < count else {
             fatalError("Index out of range")
         }
         if index == 0 {
-            return popFirst()!
+            return removeFirst()!
         }
         
         if index == count - 1 {
-            return popLast()!
+            return removeLast()!
         }
         
         let node = peekNode(at: index)
@@ -179,16 +183,39 @@ final class LinkedList<Element> {
         return node.element
     }
     
+    func removeAll() {
+        head = nil
+        tail = nil
+        count = 0
+    }
+
+    
+    public func reverse() {
+        let oldHead = head
+        var next = head
+        while let currentNode = next {
+            next = currentNode.next
+            swap(&currentNode.next, &currentNode.previous)
+            // necessary to have a strong reference to node
+            // otherwise, it is cleared from memory
+            head = currentNode
+        }
+        tail = oldHead
+    }
+    
 }
 
 // MARK: Convenience initializers
 
 extension LinkedList {
-    convenience init(array: Array<Element>) {
+    convenience init<S: Sequence> (_ sequence: S)
+        where S.Element == Element
+    {
         self.init()
-        array.forEach(append)
+        sequence.forEach(append)
     }
 }
+
 
 extension LinkedList: ExpressibleByArrayLiteral {
     convenience init(arrayLiteral elements: Element...) {
@@ -249,3 +276,27 @@ extension LinkedList {
     }
 
 }
+
+// MARK: Conformance to Equatable
+
+extension LinkedList: Equatable where Element: Equatable {
+    static func == (lhs: LinkedList<Element>, rhs: LinkedList<Element>) -> Bool {
+        guard lhs.count == rhs.count else { return false }
+        
+        let lit = lhs.makeIterator()
+        let rit = rhs.makeIterator()
+        
+        while let left = lit.next(), let right = rit.next() {
+            if left != right { return false }
+        }
+        
+        return true
+    }
+}
+
+// MARK: Other utilities
+
+extension LinkedList {
+    var isEmpty: Bool { count == 0 }
+}
+

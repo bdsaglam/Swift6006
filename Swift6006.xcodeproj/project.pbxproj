@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F689DC424E582FA0021AA2F /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F689DC324E582F90021AA2F /* LinkedListTests.swift */; };
+		3F689DC524E583D40021AA2F /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCD8FEF24E3CC8600C5E575 /* LinkedList.swift */; };
 		3FAC842E24DEC6ED004B39C8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC842D24DEC6ED004B39C8 /* main.swift */; };
 		3FAC843B24DEC6FC004B39C8 /* Swift6006Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC843A24DEC6FC004B39C8 /* Swift6006Tests.swift */; };
 		3FAC844324DECA11004B39C8 /* PeakFinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC844224DECA11004B39C8 /* PeakFinding.swift */; };
@@ -52,6 +54,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3F689DC324E582F90021AA2F /* LinkedListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListTests.swift; sourceTree = "<group>"; };
 		3FAC842A24DEC6ED004B39C8 /* Swift6006 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Swift6006; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FAC842D24DEC6ED004B39C8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		3FAC843824DEC6FC004B39C8 /* Swift6006Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Swift6006Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +135,7 @@
 				3FCD8FE224E1A11D00C5E575 /* SortingTests.swift */,
 				3FAC843A24DEC6FC004B39C8 /* Swift6006Tests.swift */,
 				3FCD8FEC24E1EFB700C5E575 /* LinearSortingTests.swift */,
+				3F689DC324E582F90021AA2F /* LinkedListTests.swift */,
 				3FAC843C24DEC6FC004B39C8 /* Info.plist */,
 			);
 			path = Swift6006Tests;
@@ -287,8 +291,10 @@
 				3FAC843B24DEC6FC004B39C8 /* Swift6006Tests.swift in Sources */,
 				3FCD8FE824E1A23C00C5E575 /* LinearSorting.swift in Sources */,
 				3FCD8FE624E1A23700C5E575 /* SequenceExtensions.swift in Sources */,
+				3F689DC524E583D40021AA2F /* LinkedList.swift in Sources */,
 				3FAC844624DECA92004B39C8 /* PeakFindingTests.swift in Sources */,
 				3FCD8FE424E1A22E00C5E575 /* Sorting.swift in Sources */,
+				3F689DC424E582FA0021AA2F /* LinkedListTests.swift in Sources */,
 				3FCD8FD624E084DF00C5E575 /* DocumentSimilarity.swift in Sources */,
 				3FAC845124DF1D42004B39C8 /* Array2DTests.swift in Sources */,
 				3FAC844424DECA11004B39C8 /* PeakFinding.swift in Sources */,
