@@ -33,6 +33,13 @@
 		3F504D1124E701D80095B3EF /* HashMapWithChainingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F504D1024E701D80095B3EF /* HashMapWithChainingTests.swift */; };
 		3F689DC424E582FA0021AA2F /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F689DC324E582F90021AA2F /* LinkedListTests.swift */; };
 		3F689DC524E583D40021AA2F /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCD8FEF24E3CC8600C5E575 /* LinkedList.swift */; };
+		3F72BAC724E91BD500335D47 /* RollingHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F72BAC624E91BD500335D47 /* RollingHash.swift */; };
+		3F72BAC824E91BD500335D47 /* RollingHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F72BAC624E91BD500335D47 /* RollingHash.swift */; };
+		3F72BACA24E91CB900335D47 /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F72BAC924E91CB900335D47 /* MathUtils.swift */; };
+		3F72BACB24E91CB900335D47 /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F72BAC924E91CB900335D47 /* MathUtils.swift */; };
+		3F72BACD24E91E4000335D47 /* KarpRobin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F72BACC24E91E4000335D47 /* KarpRobin.swift */; };
+		3F72BACE24E91E4000335D47 /* KarpRobin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F72BACC24E91E4000335D47 /* KarpRobin.swift */; };
+		3F72BAD224E91E7C00335D47 /* KarpRobinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F72BAD124E91E7C00335D47 /* KarpRobinTests.swift */; };
 		3FAC842E24DEC6ED004B39C8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC842D24DEC6ED004B39C8 /* main.swift */; };
 		3FAC843B24DEC6FC004B39C8 /* Swift6006Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC843A24DEC6FC004B39C8 /* Swift6006Tests.swift */; };
 		3FAC844324DECA11004B39C8 /* PeakFinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC844224DECA11004B39C8 /* PeakFinding.swift */; };
@@ -93,6 +100,10 @@
 		3F504D0D24E6EB250095B3EF /* HashMapType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashMapType.swift; sourceTree = "<group>"; };
 		3F504D1024E701D80095B3EF /* HashMapWithChainingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashMapWithChainingTests.swift; sourceTree = "<group>"; };
 		3F689DC324E582F90021AA2F /* LinkedListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListTests.swift; sourceTree = "<group>"; };
+		3F72BAC624E91BD500335D47 /* RollingHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollingHash.swift; sourceTree = "<group>"; };
+		3F72BAC924E91CB900335D47 /* MathUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathUtils.swift; sourceTree = "<group>"; };
+		3F72BACC24E91E4000335D47 /* KarpRobin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KarpRobin.swift; sourceTree = "<group>"; };
+		3F72BAD124E91E7C00335D47 /* KarpRobinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KarpRobinTests.swift; sourceTree = "<group>"; };
 		3FAC842A24DEC6ED004B39C8 /* Swift6006 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Swift6006; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FAC842D24DEC6ED004B39C8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		3FAC843824DEC6FC004B39C8 /* Swift6006Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Swift6006Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +200,7 @@
 				3FCD8FD424E0811C00C5E575 /* DocumentSimilarityTests.swift */,
 				3F504D1024E701D80095B3EF /* HashMapWithChainingTests.swift */,
 				3FCD8FEC24E1EFB700C5E575 /* LinearSortingTests.swift */,
+				3F72BAD124E91E7C00335D47 /* KarpRobinTests.swift */,
 				3F689DC324E582F90021AA2F /* LinkedListTests.swift */,
 				3FAC844524DECA92004B39C8 /* PeakFindingTests.swift */,
 				3FCD8FE224E1A11D00C5E575 /* SortingTests.swift */,
@@ -204,6 +216,7 @@
 				3FAC844224DECA11004B39C8 /* PeakFinding.swift */,
 				3FCD8FD224E07CD700C5E575 /* DocumentSimilarity.swift */,
 				3FCD8FDA24E1933500C5E575 /* Sorting.swift */,
+				3F72BACC24E91E4000335D47 /* KarpRobin.swift */,
 				3FCD8FE024E19B2300C5E575 /* LinearSorting.swift */,
 			);
 			path = Algorithms;
@@ -213,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				3FAC844724DF08B7004B39C8 /* ArrayExtensions.swift */,
+				3F72BAC924E91CB900335D47 /* MathUtils.swift */,
 				3FAC844A24DF0DD2004B39C8 /* CollectionExtensions.swift */,
 				3FCD8FDE24E19AC500C5E575 /* IntExtensions.swift */,
 				3FCD8FDC24E1948700C5E575 /* SequenceExtensions.swift */,
@@ -229,6 +243,7 @@
 				3FCD8FEF24E3CC8600C5E575 /* LinkedList.swift */,
 				3F504D0D24E6EB250095B3EF /* HashMapType.swift */,
 				3F504D0A24E6E68C0095B3EF /* HashMapWithChaining.swift */,
+				3F72BAC624E91BD500335D47 /* RollingHash.swift */,
 				3F504CEC24E67F5B0095B3EF /* BinaryTrees */,
 			);
 			path = "Data Structures";
@@ -325,6 +340,7 @@
 			files = (
 				3FAC842E24DEC6ED004B39C8 /* main.swift in Sources */,
 				3FCD8FDD24E1948700C5E575 /* SequenceExtensions.swift in Sources */,
+				3F72BAC724E91BD500335D47 /* RollingHash.swift in Sources */,
 				3FAC844B24DF0DD2004B39C8 /* CollectionExtensions.swift in Sources */,
 				3F504D0324E687A60095B3EF /* BaseBinarySearchTree.swift in Sources */,
 				3FCD8FEA24E1B4C200C5E575 /* Heap.swift in Sources */,
@@ -341,11 +357,13 @@
 				3FAC844824DF08B7004B39C8 /* ArrayExtensions.swift in Sources */,
 				3FAC844324DECA11004B39C8 /* PeakFinding.swift in Sources */,
 				3F504D0024E687970095B3EF /* BinarySearchTreeType.swift in Sources */,
+				3F72BACD24E91E4000335D47 /* KarpRobin.swift in Sources */,
 				3F504CF424E67FBB0095B3EF /* BinarySearchTree.swift in Sources */,
 				3F504D0B24E6E68C0095B3EF /* HashMapWithChaining.swift in Sources */,
 				3FCD8FDB24E1933500C5E575 /* Sorting.swift in Sources */,
 				3FCD8FF024E3CC8600C5E575 /* LinkedList.swift in Sources */,
 				3FAC844E24DF1A43004B39C8 /* Array2D.swift in Sources */,
+				3F72BACA24E91CB900335D47 /* MathUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,15 +379,19 @@
 				3FCD8FEB24E1C4C900C5E575 /* Heap.swift in Sources */,
 				3FCD8FE724E1A23900C5E575 /* Utils.swift in Sources */,
 				3F504CEB24E67F4D0095B3EF /* BSTUnitTests.swift in Sources */,
+				3F72BAC824E91BD500335D47 /* RollingHash.swift in Sources */,
 				3F504CF224E67F650095B3EF /* BinaryTreeNodeType.swift in Sources */,
 				3F504CF824E682210095B3EF /* AVLTree.swift in Sources */,
 				3FAC843B24DEC6FC004B39C8 /* Swift6006Tests.swift in Sources */,
 				3F504D0C24E6E68C0095B3EF /* HashMapWithChaining.swift in Sources */,
 				3F504D0724E6A5410095B3EF /* BitwiseOperations.swift in Sources */,
+				3F72BACB24E91CB900335D47 /* MathUtils.swift in Sources */,
 				3FCD8FE824E1A23C00C5E575 /* LinearSorting.swift in Sources */,
 				3FCD8FE624E1A23700C5E575 /* SequenceExtensions.swift in Sources */,
 				3F689DC524E583D40021AA2F /* LinkedList.swift in Sources */,
 				3FAC844624DECA92004B39C8 /* PeakFindingTests.swift in Sources */,
+				3F72BAD224E91E7C00335D47 /* KarpRobinTests.swift in Sources */,
+				3F72BACE24E91E4000335D47 /* KarpRobin.swift in Sources */,
 				3F504D0F24E6EB250095B3EF /* HashMapType.swift in Sources */,
 				3FCD8FE424E1A22E00C5E575 /* Sorting.swift in Sources */,
 				3F504CEA24E67F4D0095B3EF /* AVLTreeUnitTests.swift in Sources */,
