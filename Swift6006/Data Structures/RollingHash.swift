@@ -39,7 +39,6 @@ public class RollingHash {
         } else {
             baseForFirstDigit = (baseForFirstDigit * radix) % divisor
         }
-        
     }
     
     public func skipFirst() {

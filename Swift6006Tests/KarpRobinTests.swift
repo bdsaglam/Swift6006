@@ -7,6 +7,8 @@
 //
 
 import XCTest
+@testable import Swift6006
+
 
 class KarpRobinTests: XCTestCase {
     
