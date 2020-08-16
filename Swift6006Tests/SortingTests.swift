@@ -9,6 +9,7 @@
 import XCTest
 @testable import Swift6006
 
+
 class SortingUnitTest: XCTestCase {
     let sizes = Array(stride(from: 0, to: 100, by: 10)) +
         Array(stride(from: 100, to: 1000, by: 100))

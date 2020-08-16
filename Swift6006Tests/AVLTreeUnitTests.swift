@@ -132,7 +132,6 @@ class AVLTreeUnitTest: XCTestCase {
         XCTAssert(tree.checkRepInvariance())
         
         XCTAssert(expected.elementsEqual(actual))
-        
     }
 
 }

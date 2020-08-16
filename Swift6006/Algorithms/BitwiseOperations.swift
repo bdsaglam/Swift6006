@@ -36,6 +36,7 @@ extension BinaryInteger {
         if trimLeadingZeros {
             bitz = Array(bitz.drop{ $0==0 })
         }
+        if bitz.isEmpty { return "0" }
         return bitz.map{ "\($0)" }.joined(separator: "")
     }
     

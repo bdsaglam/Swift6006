@@ -95,4 +95,5 @@ class KarpRobinTests: XCTestCase {
         let expected = text.range(of: pattern)!.lowerBound
         XCTAssertEqual(startIndex, expected)
     }
+    
 }

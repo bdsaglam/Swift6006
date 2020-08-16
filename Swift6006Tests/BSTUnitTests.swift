@@ -132,8 +132,6 @@ class BSTUnitTest: XCTestCase {
         XCTAssert(bst.checkRepInvariance())
         
         XCTAssert(expected.elementsEqual(actual))
-        
     }
-
 
 }

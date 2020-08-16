@@ -9,6 +9,7 @@
 import XCTest
 @testable import Swift6006
 
+
 class SplitIntoWordsTest: XCTestCase {
     
     func testEmptyString() {
@@ -37,6 +38,7 @@ class SplitIntoWordsTest: XCTestCase {
         let actual = splitIntoWords(s)
         XCTAssertEqual(expected, actual)
     }
+    
 }
 
 class CosineSimilarityTest: XCTestCase {
@@ -122,4 +124,5 @@ class DocumentSimilarityTest: XCTestCase {
         let similarityScore = documentSimilarity(s, s2)
         XCTAssertTrue(similarityScore < 1)
     }
+    
 }

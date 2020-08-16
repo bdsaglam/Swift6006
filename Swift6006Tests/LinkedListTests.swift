@@ -8,6 +8,7 @@
 import XCTest
 @testable import Swift6006
 
+
 class LinkedListTest: XCTestCase {
    
     func testEmptyInitializer() {
@@ -218,4 +219,5 @@ class LinkedListTest: XCTestCase {
         
         XCTAssertEqual(evens, expected)
     }
+    
 }

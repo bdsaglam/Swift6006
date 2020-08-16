@@ -7,6 +7,8 @@
 //
 
 import XCTest
+@testable import Swift6006
+
 
 class LinearSortingTests: XCTestCase {
 
@@ -57,7 +59,6 @@ class LinearSortingTests: XCTestCase {
         XCTAssert(expected.map{ $0.1}.elementsEqual(actual.map{ $0.1}))
     }
     
-    
     func testBucketSort(){
         let array = [12, 5, 58, 85, 34, 20, 89, 4, 95, 77, 56]
         let expected = array.sorted()
@@ -66,4 +67,5 @@ class LinearSortingTests: XCTestCase {
         
         XCTAssert(expected.elementsEqual(actual))
     }
+    
 }

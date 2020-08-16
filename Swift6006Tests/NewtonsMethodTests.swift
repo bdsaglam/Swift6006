@@ -33,7 +33,9 @@ class NewtonsMethodTests: XCTestCase {
     }
 }
 
-fileprivate func makeUpdateFunctionForSqrt(_ a: Double) -> UnivariateNumericFunction {
+fileprivate func makeUpdateFunctionForSqrt(_ a: Double)
+    -> UnivariateNumericFunction
+{
     let uf: UnivariateNumericFunction = { x in
         return x / 2 + (a / 2) / x
     }

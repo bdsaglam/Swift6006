@@ -9,7 +9,9 @@
 import XCTest
 @testable import Swift6006
 
+
 class BitwiseOperationTests: XCTestCase {
+    
     func testBitAtIndexWithZero() {
         let number: Int8 = 0
         for i in 0..<number.bitWidth {
@@ -66,20 +68,27 @@ class BitwiseOperationTests: XCTestCase {
         XCTAssertEqual(bitz, expected)
     }
     
+    func testBinaryRepresentationOfUnsignedZero() {
+            let number = 0
+            let br = number.binaryRepresentation()
+            XCTAssertEqual(br, "0")
+    }
+    
     func testBinaryRepresentationOfUnsignedInteger(){
-        for _ in 0..<100 {
+        for _ in 0..<1000 {
             let number = UInt8.random(in: 0...255)
             let br = number.binaryRepresentation()
-            XCTAssertEqual(UInt8(br, radix: 2), number)
+            XCTAssertEqual(UInt8(br, radix: 2), number, "\(number) \(br)")
         }
     }
     
     func testBinaryRepresentationOfSignedInteger(){
-        for _ in 0..<100 {
+        for _ in 0..<1000 {
             let number = Int8.random(in: -128...127)
             let br = number.binaryRepresentation()
             let recons = Int8(bitPattern: UInt8(br, radix: 2)!)
             XCTAssertEqual(recons, number)
         }
     }
+    
 }

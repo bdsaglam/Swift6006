@@ -9,6 +9,7 @@
 import XCTest
 @testable import Swift6006
 
+
 class HashMapWithChainingTests: XCTestCase {
 
     func testNonExistingKey() {

@@ -111,12 +111,5 @@ class Array2DTests: XCTestCase {
         XCTAssertEqual(r, 1)
         XCTAssertEqual(c, 0)
     }
-    
-    
-    
-    
-    
-    
-
 
 }
