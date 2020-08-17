@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 func sqrtNewton(_ x: Int, precision: Int = 4) -> (Int, Int) {
     precondition(x >= 0)
     
@@ -64,4 +65,29 @@ fileprivate func round(_ x: Int, radix: Int = 10) -> Int {
         return x + radix - rem
     }
     return x - rem
+}
+
+/**
+ This takes more time than Newton.
+ Newton takes O(lg(d)) while this binary search takes O(d), where a has d bits.
+ 
+ The idea here is to make an educated initlal guess so that Newton's solver converges in fewer iterations, i.e. faster.
+ For sqrt, we do a binary search within 64 bits integer to find an initial guess.
+ If a number has N bits, its sqrt cannot have more bits than N/2. So that is our upper bound for binary search.
+ */
+func sqrtWithBinarySearch(_ a: Int) -> Int {
+    var high = 1 << (a.countSignificantBits() / 2 + 1)
+    
+    while true {
+        let mid = high >> 1
+        let midsq = mid * mid
+        
+        if midsq > a {
+            high = mid
+        } else {
+            return mid
+        }
+    }
+    
+    fatalError()
 }
