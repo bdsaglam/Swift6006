@@ -9,6 +9,8 @@
 import Foundation
 
 
+// MARK: AVLNode implementation
+
 final class AVLNode<Key: Comparable, Value> {
     let key: Key
     let value: Value
@@ -39,20 +41,8 @@ final class AVLNode<Key: Comparable, Value> {
 }
 
 extension AVLNode : BinarySearchTreeNodeType {
-
-    func insert(key: Key, value: Value) -> AVLNode {
-        let node = _proInsert(key: key, value: value)
-        node.updatePathToRoot()
-        return node
-    }
     
-    func delete() throws {
-        let parent = self.parent
-        try _proDelete()
-        parent?.updatePathToRoot()
-    }
-    
-    private func updatePathToRoot() {
+    func updateAfterMutation() {
         var current: AVLNode<Key, Value>? = self
         
         while let node = current {
@@ -67,6 +57,8 @@ extension AVLNode : BinarySearchTreeNodeType {
         updateHeightAndSkew()
     }
 }
+
+// MARK: AVLTree implementation
 
 class AVLTree<Key:Comparable, Value>: BaseBinarySearchTree<AVLNode<Key, Value>> {
     

@@ -11,14 +11,12 @@ import Foundation
 
 // MARK: Binary Search Tree Node Protocol
 
-enum BinarySearchTreeNodeError: Error {
-    case deletionWithoutParent
-}
-
 protocol BinarySearchTreeNodeType: BinaryTreeNodeType {
     func insert(key: Key, value: Value) -> Self
     
-    func delete() throws
+    func delete()
+    
+    func updateAfterMutation()
     
     func min() -> Self
     
@@ -72,15 +70,15 @@ extension BinarySearchTreeNodeType {
 
 extension BinarySearchTreeNodeType {
     func insert(key: Key, value: Value) -> Self {
-        self._proInsert(key: key, value: value)
+        let node = insertHelper(key: key, value: value)
+        node.updateAfterMutation()
+        return node
     }
-    
-    func delete() throws { try self._proDelete() }
-    
-    func _proInsert(key: Key, value: Value) -> Self {
+        
+    private func insertHelper(key: Key, value: Value) -> Self {
         if key <= self.key {
             if let left = left {
-                return left._proInsert(key: key, value: value)
+                return left.insert(key: key, value: value)
             } else {
                 let node = Self(key: key, value: value)
                 node.parent = self
@@ -89,7 +87,7 @@ extension BinarySearchTreeNodeType {
             }
         } else {
             if let right = right {
-                return right._proInsert(key: key, value: value)
+                return right.insert(key: key, value: value)
             } else {
                 let node = Self(key: key, value: value)
                 node.parent = self
@@ -99,19 +97,23 @@ extension BinarySearchTreeNodeType {
         }
     }
     
-    func _proDelete() throws {
+    func delete() {
+        guard let parent = parent else {
+            fatalError("Cannot delete a node if it has no parent.")
+        }
+        
         if isLeaf {
-            try deleteEasy(promote: nil)
+            deleteEasy(promote: nil)
             return
         }
         
         if left == nil {
-            try deleteEasy(promote: right)
+            deleteEasy(promote: right)
             return
         }
         
         if right == nil {
-            try deleteEasy(promote: left)
+            deleteEasy(promote: left)
             return
         }
         
@@ -127,12 +129,16 @@ extension BinarySearchTreeNodeType {
         self.left = nil
         self.right = node
         
-        try! successor.deleteEasy(promote: successor.right)
-        try! deleteEasy(promote: node)
+        successor.deleteEasy(promote: successor.right)
+        deleteEasy(promote: node)
+        
+        parent.updateAfterMutation()
     }
     
-    private func deleteEasy(promote child: Self?) throws {
-        guard let parent = parent else { throw BinarySearchTreeNodeError.deletionWithoutParent }
+    private func deleteEasy(promote child: Self?) {
+        guard let parent = parent else {
+            fatalError("Cannot delete a node if it has no parent.")
+        }
         
         child?.parent = parent
         if parent.left === self {
@@ -146,6 +152,7 @@ extension BinarySearchTreeNodeType {
         self.left = nil
     }
     
+    func updateAfterMutation() {}
 }
 
 extension BinarySearchTreeNodeType {
