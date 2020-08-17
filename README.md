@@ -1,4 +1,4 @@
-# Swift6006 - [WIP]
+# Swift6006
 
 This repository contains Swift implementations of algorithms and data structures covered in [MIT's Introduction to Algorithms
 course](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/). 
@@ -28,20 +28,20 @@ course](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/
 - [x] Newton's method
 
 ### Unit 5: Graphs
-- [ ] Breadth-first search (BFS)
-- [ ] Depth-first search (DFS), topological sorting
+- [x] Breadth-first search (BFS)
+- [x] Depth-first search (DFS), topological sorting
 
 ### Unit 6: Shortest Paths
-- [ ] Single source shortest paths problems
-- [ ] Dijkstra
-- [ ] Bellman-Ford
+- [x] Single source shortest paths problems
+- [x] Dijkstra
+- [x] Bellman-Ford
 
 ### Unit 7: Dynamic Programming
-- [ ] Text justification
-- [ ] Blackjack
-- [ ] Edit distance
-- [ ] Knapsack
-- [ ] Longest sorted sub-sequence
+- [x] Text justification
+- [x] Crazy8
+- [x] Edit distance
+- [x] Knapsack
+- [x] Longest sorted sub-sequence
 
 
 
