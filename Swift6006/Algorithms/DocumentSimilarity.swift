@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 /// Split text into words.
 /// - Parameter text: A String-like object
 /// - Returns: array of words

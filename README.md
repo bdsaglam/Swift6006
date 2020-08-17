@@ -5,6 +5,7 @@ course](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/
 
 ## Syllabus
 ### Unit 1: Algorithmic thinking
+- [x] Binary search
 - [x] Peak finding, Array2D
 - [x] Document distance
 
@@ -19,7 +20,7 @@ course](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/
 - [x] Hashing with chaining
 - [x] Table doubling
 - [x] Rolling hash, Karp-Robin
-- [ ] Open adresssing
+- [ ] Open adressing
 
 
 ### Unit 4: Numerics

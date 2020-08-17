@@ -55,6 +55,7 @@ class BaseBinarySearchTree<NodeType: BinarySearchTreeNodeType>
         assert(checkRepInvariance())
     }
     
+    @discardableResult
     func remove(key: Key) -> Value? {
         guard let root = root else { return nil }
         
@@ -64,7 +65,8 @@ class BaseBinarySearchTree<NodeType: BinarySearchTreeNodeType>
         remove(node)
         return result
     }
-        
+    
+    @discardableResult
     func removeMin() -> (Key, Value)? {
         guard let root = root else { return nil }
         
@@ -74,6 +76,7 @@ class BaseBinarySearchTree<NodeType: BinarySearchTreeNodeType>
         return result
     }
     
+    @discardableResult
     func removeMax() -> (Key, Value)? {
         guard let root = root else { return nil }
         

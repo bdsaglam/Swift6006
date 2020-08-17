@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 fileprivate let primeNumber: Int = 65519
 
 fileprivate extension Character {
