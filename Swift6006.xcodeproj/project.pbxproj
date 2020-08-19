@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F4ABAA424ED2CE00085FA88 /* EditDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4ABAA324ED2CDF0085FA88 /* EditDistance.swift */; };
 		3F504CEA24E67F4D0095B3EF /* AVLTreeUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F504CE824E67F4D0095B3EF /* AVLTreeUnitTests.swift */; };
 		3F504CEB24E67F4D0095B3EF /* BSTUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F504CE924E67F4D0095B3EF /* BSTUnitTests.swift */; };
 		3F504CF124E67F650095B3EF /* BinaryTreeNodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F504CEE24E67F650095B3EF /* BinaryTreeNodeType.swift */; };
@@ -134,6 +135,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3F4ABAA324ED2CDF0085FA88 /* EditDistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditDistance.swift; sourceTree = "<group>"; };
 		3F504CE824E67F4D0095B3EF /* AVLTreeUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVLTreeUnitTests.swift; sourceTree = "<group>"; };
 		3F504CE924E67F4D0095B3EF /* BSTUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSTUnitTests.swift; sourceTree = "<group>"; };
 		3F504CEE24E67F650095B3EF /* BinaryTreeNodeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryTreeNodeType.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				3F72BB0624EAA33000335D47 /* LongestSortedSubsequence.swift */,
+				3F4ABAA324ED2CDF0085FA88 /* EditDistance.swift */,
 				3F72BB1624EAA37900335D47 /* Knapsack.swift */,
 				3F72BB1324EAA37300335D47 /* TextJustification.swift */,
 				3F72BB0524EAA33000335D47 /* Crazy8.swift */,
@@ -472,6 +475,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FAC842E24DEC6ED004B39C8 /* main.swift in Sources */,
+				3F4ABAA424ED2CE00085FA88 /* EditDistance.swift in Sources */,
 				3F72BB1424EAA37300335D47 /* TextJustification.swift in Sources */,
 				3FCD8FDD24E1948700C5E575 /* SequenceExtensions.swift in Sources */,
 				3F72BAC724E91BD500335D47 /* RollingHash.swift in Sources */,
